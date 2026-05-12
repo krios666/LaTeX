@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}  % исправлено: utf8 вместо cp1251
+\usepackage[utf8]{inputenc}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -21,31 +21,24 @@
 Тогда математическое ожидание оценки функции оценки перспектив будет равно
 
 \[
-E_0 \left( u \left( \frac{\Lambda_T}{\Lambda_0} (S_T - X) \right) \right) =
-\int u \left( \frac{\Lambda_T}{\Lambda_0} (S_T - X') \right) df(\Lambda_T, S_T),
+E_0 \left( u \left( \frac{\Lambda_T}{\Lambda_0} (S_T - X) \right) \right) = \int u \left( \frac{\Lambda_T}{\Lambda_0} (S_T - X') \right) df(\Lambda_T, S_T),
 \]
 
 где $S_T$ и $\Lambda_T$ есть решение предыдущего уравнения. Имеем
 
-\[
-\ln \Lambda_T = \ln \Lambda_0 - \left( r + \frac{1}{2} \left( \frac{\mu - r}{\sigma} \right)^2 \right) T
-- \frac{\mu - r}{\sigma} \sqrt{T} \varepsilon,
-\qquad (1)
-\]
+\begin{equation}
+\ln \Lambda_T = \ln \Lambda_0 - \left( r + \frac{1}{2} \left( \frac{\mu - r}{\sigma} \right)^2 \right) T - \frac{\mu - r}{\sigma} \sqrt{T} \varepsilon,
+\label{eq:lambda}
+\end{equation}
 
-где $\varepsilon \sim N(0,1)$, $S_0$ — начальная стоимость портфеля. Тогда, используя (1), получим
+где $\varepsilon \sim N(0,1)$, $S_0$ — начальная стоимость портфеля. Тогда, используя \eqref{eq:lambda}, получим
 
-\[
-E_0 \left( u \left( \frac{\Lambda_T}{\Lambda_0} (S_T - X) \right) \right) =
--\int\limits_{S_T = X}^{+\infty}
-\left( \frac{\Lambda_T(\varepsilon)}{\Lambda_0} (S_T(\varepsilon) - X) \right)^{\alpha}
-dw^+ (1 - F(\varepsilon)) -
-\]
-\[
--\lambda \int\limits_{S_T = -\infty}^{X}
-\left( \frac{\Lambda_T(\varepsilon)}{\Lambda_0} (X - S_T(\varepsilon)) \right)^{\beta}
-dw^- (F(\varepsilon)).
-\qquad (2)
-\]
+\begin{equation}
+\begin{aligned}
+E_0 \left( u \left( \frac{\Lambda_T}{\Lambda_0} (S_T - X) \right) \right) = 
+& -\int\limits_{S_T = X}^{+\infty} \left( \frac{\Lambda_T(\varepsilon)}{\Lambda_0} (S_T(\varepsilon) - X) \right)^\alpha dw^+(1 - F(\varepsilon)) \\
+& - \lambda \int\limits_{S_T = -\infty}^{X} \left( \frac{\Lambda_T(\varepsilon)}{\Lambda_0} (X - S_T(\varepsilon)) \right)^\beta dw^- (F(\varepsilon)).
+\end{aligned}
+\end{equation}
 
 \end{document}
